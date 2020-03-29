@@ -29,14 +29,15 @@ import java.util.Locale;
 
 public class Util {
     private final static String TAG = "Util";
-    public final static String LocalHost ="0851243b.ngrok.io";
+//    public final static String LocalHost ="d804c5e1.ngrok.io";
 //    public final static String LocalHost ="10.0.2.2:8081";
-//    public final static String LocalHost ="da104g5.nctu.me";
+    public final static String LocalHost ="da104g5.nctu.me";
+//    public final static String LocalHost ="104.199.135.173";
 
 //    public final static String LocalHostURL = "http://10.0.2.2:8081/DA104G5M/Mobile";
 //    public final static String LocalHostURL = "http://da104g5.nctu.me/DA104G5M/Mobile";
 //    public final static String LocalHostURL = "https://cd5ff39a.ngrok.io/DA104G5M/Mobile";
-public final static String LocalHostURL = "http://"+LocalHost+"/DA104G5/Mobile";
+public final static String LocalHostURL = "https://"+LocalHost+"/DA104G5/Mobile";
 public static final String SERVER_URI =
 //        "ws://10.0.2.2:8081/DA104G5/MasterWS/";
         "wss://"+LocalHost+"/DA104G5M/MasterWS/";
