@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:padding="1dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/liveLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/t02" />
+
+        <TextView
+            android:id="@+id/liveName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="right|bottom"
+            android:text="會員名"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:gravity="left|bottom"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/liveName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="3dp"
+            android:text="直播標題XXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

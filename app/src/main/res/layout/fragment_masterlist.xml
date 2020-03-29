@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:layout_marginTop="60dp"
+    android:layout_marginBottom="60dp"
+    >
+    <TextView
+        android:id="@+id/tv_onlineMaster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@color/black_transparent"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="目前無管理員在線" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFriends"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

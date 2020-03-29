@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/tb_tgCreat"
+        android:title="創建揪團"
+        android:orderInCategory="3"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/tb_tgMyCreatGroup"
+        android:title="我創的團"
+        android:orderInCategory="4"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/tb_tgMyAddGroup"
+        android:title="報名歷史"
+        android:orderInCategory="5"
+        app:showAsAction="always"
+        />
+
+
+</menu>

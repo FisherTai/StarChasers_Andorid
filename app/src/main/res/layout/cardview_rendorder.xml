@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/transparent"
+    android:padding="5dp"
+    app:cardCornerRadius="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="租借訂單編號:"
+                    android:textColor="@color/white"
+                    android:layout_margin="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/me_rd_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="m_rd_no"
+                    android:layout_margin="2dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="租借商品編號:" />
+
+                <TextView
+                    android:id="@+id/me_erg_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:layout_span="2"
+                    android:text="m_erg_no" />
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="預定開始租借日:" />
+
+                <TextView
+                    android:id="@+id/me_rd_startdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:layout_span="2"
+                    android:text="m_rd_startdate" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="預定歸還日:" />
+
+                <TextView
+                    android:id="@+id/me_rd_enddate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+
+                    android:layout_span="2"
+                    android:text="m_rd_enddate" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="租借天數:" />
+
+                <TextView
+                    android:id="@+id/me_rd_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:layout_span="2"
+                    android:text="m_rd_day" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="押金:" />
+
+                <TextView
+                    android:id="@+id/me_rd_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/white"
+                    android:layout_span="2"
+                    android:text="m_rd_deposit" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="訂單總金額:" />
+
+                <TextView
+                    android:id="@+id/me_rd_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_span="2"
+                    android:textColor="@color/white"
+                    android:text="m_rd_money" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="訂單目前狀態:"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+
+                <TextView
+                    android:id="@+id/me_rd_nowstate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="m_rd_nowstate"
+                    android:textColor="@color/white"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/bg_btn_red"
+                    android:text="取消租借"
+                    android:textColor="@color/white" />
+
+
+            </TableRow>
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

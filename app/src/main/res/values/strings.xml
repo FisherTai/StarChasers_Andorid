@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Star Chasers</string>
+    <string name="Tour_Group">Tour Group</string>
+    <string name="Memder_Data">Memder Detail</string>
+    <string name="Mem_Tg_Manage">Tour Group Manage</string>
+    <string name="Tour_Group_Detail">Tour Group Detail</string>
+    <string name="Tour_Group_Create">Tour Group Create</string>
+    <string name="Tour_Group_MyGroup">Tour Group My Group</string>
+    <string name="Tour_Group_Review">Tour Group Review</string>
+    <string name="Spot_Detail">Spot Detail</string>
+    <string name="QRcode">QRcode</string>
+    <string name="Manager_rantorder">Manager rantorder</string>
+    <string name="MemberRentorder">Member Rentorder</string>
+    <string name="ManagerMain">Manager Main</string>
+
+    <string-array name="string_rentorder_state">
+        <item>0=已預約</item>
+        <item>1=出租中</item>
+        <item>2=已歸還</item>
+        <item>3=延遲歸還</item>
+        <item>4=歸還但商品損壞</item>
+        <item>5=訂單取消</item>
+        <item>6=遺失</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+  <!--畫面中使用-->
+    <string name="unconnected">無網路狀態</string>
+
+    <!--tg_review.xml-->
+    <string name="tg_RNotYet">審核中</string>
+    <string name="tg_RSuccess">審核通過</string>
+    <string name="tg_RFail">審核不通過</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_tab1"
+        android:icon="@drawable/item01"
+        android:title="會員"
+        android:checkable="true"
+
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/item_tab2"
+        android:icon="@drawable/item02"
+        android:title="揪團"
+        />
+
+    <item
+        android:id="@+id/item_tab3"
+        android:icon="@drawable/item03"
+        android:title="直播"
+        />
+
+    <item
+        android:id="@+id/item_tab4"
+        android:icon="@drawable/item04"
+        android:title="觀星點" />
+
+    <item
+        android:id="@+id/item_tab5"
+        android:icon="@drawable/item05"
+        android:title="客服" />
+
+
+</menu>

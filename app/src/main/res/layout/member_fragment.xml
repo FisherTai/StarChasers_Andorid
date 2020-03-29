@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".member.MemberFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pic_bg_mem"
+        android:padding="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iMemIMG"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="2dp"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/white"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/mem_ItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/iMemIMG"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-4dp">
+
+            <TextView
+                android:id="@+id/tvMemname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="會員名"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                tools:layout_editor_absoluteX="172dp"
+                tools:layout_editor_absoluteY="259dp" />
+            <Button
+                android:id="@+id/membtn_Data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_border_black"
+                android:backgroundTint="#80F44336"
+                android:textSize="20dp"
+                android:text="基本資料"
+                android:textColor="#FFEAFF" />
+            <Button
+                android:id="@+id/membtn_RentOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_border_black"
+                android:backgroundTint="#802196F3"
+                android:textSize="20dp"
+                android:text="租借訂單"
+                android:textColor="#FFEAFF" />
+            <Button
+                android:id="@+id/membtn_TGDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_border_black"
+                android:backgroundTint="#5C8BC34A"
+                android:textSize="20dp"
+                android:text="揪團管理"
+                android:textColor="#FFEAFF" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <ImageView
+            android:id="@+id/iMobileRent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="156dp"
+            android:background="@drawable/bg_border_orange"
+            android:padding="20dp"
+            android:src="@drawable/mrent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mem_ItemContent"
+            app:layout_constraintVertical_bias="0.291"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="手機租借證"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/iMobileRent"
+            app:layout_constraintTop_toBottomOf="@+id/iMobileRent" />
+
+
+
+        <Button
+            android:id="@+id/btnlogout"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#4DBEB7B7"
+            android:background="@drawable/bg_border_black"
+            android:text="登出"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,OnClick" />
+
+        <ImageView
+            android:id="@+id/iMobileSign"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_border_green"
+            android:padding="20dp"
+            android:src="@drawable/mfriend"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mem_ItemContent"
+            app:layout_constraintVertical_bias="0.173"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:text="揪團報到"
+            android:textSize="15dp"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/iMobileSign"
+            app:layout_constraintTop_toBottomOf="@+id/iMobileSign" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

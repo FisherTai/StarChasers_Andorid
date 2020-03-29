@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tb_liveList"
+        android:title="直播列表"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/tb_creatLive"
+        android:title="發起直播"
+        android:orderInCategory="2"
+        app:showAsAction="always"
+        />
+
+
+
+
+</menu>

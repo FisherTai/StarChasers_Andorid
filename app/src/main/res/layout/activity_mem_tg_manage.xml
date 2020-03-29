@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pic_bg_mem">
+
+    <Button
+        android:id="@+id/memt_tgPart"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#DD5E0606"
+        android:textSize="30dp"
+        android:text="我是參團者"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/memt_tgMaster"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#DD16065E"
+        android:textSize="30dp"
+        android:text="我是團主"
+        android:textColor="@color/white" />
+</LinearLayout>

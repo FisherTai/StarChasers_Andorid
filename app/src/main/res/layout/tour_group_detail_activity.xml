@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tourgroup.TourGrorupDetail">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="2"
+            android:background="@drawable/pic_bg_tourgroup"
+            >
+
+            <ImageView
+                android:id="@+id/tgd_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                tools:srcCompat="@drawable/no_image_available" />
+
+            <TextView
+                android:id="@+id/tgd_tgname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black_transparent"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_transparent"
+                >
+
+                <TextView
+                    android:id="@+id/tgd_tgAcDate"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="開始日期:\n" />
+
+                <TextView
+                    android:id="@+id/tgd_tgEndDate"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="結束日期:\n" />
+
+                <TextView
+                    android:id="@+id/tgd_tgSignEnd"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="報名截止日:\n" />
+
+                <Button
+                    android:id="@+id/tgd_btnSign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_btn"
+                    android:text="我想參加" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/black_transparent" />
+
+            <TextView
+                android:id="@+id/tgd_tgAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="地點：" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/black_transparent" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:background="@color/transparent"
+                        android:text="成團條件:"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:padding="2dp"
+                        android:id="@+id/tgd_tgCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:background="@color/transparent"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:text=""/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/transparent" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:background="@color/transparent"
+                        android:text="揪團描述:"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/tgd_tgContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:gravity="left"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/transparent" />
+
+                    <TextView
+                        android:id="@+id/tgd_tgNumLimit"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="上限人數: " />
+
+                    <TextView
+                        android:id="@+id/tgd_tgNum"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="目前人數: " />
+
+                </LinearLayout>
+            </ScrollView>
+        </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pic_bg_tourgroup"
+    android:orientation="vertical"
+    android:id="@+id/tour_group_create"
+    android:padding="5dp">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:background="@color/black_transparent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="創建揪團"></TextView>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="行程名稱:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/tgc_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:ems="15"
+                android:text=""
+                android:textColor="#FCF4AB"
+                android:maxLength="20"
+                android:scrollIndicators="end"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="活動日期:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tgc_AcDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890-"
+                android:textColor="#FCF4AB"
+                android:textSize="15dp"
+                android:text="點此選擇日期"
+                android:maxLength="10"
+                android:inputType="date"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="結束日期:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+
+            <TextView
+                android:id="@+id/tgc_AcEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890-"
+                android:textSize="15dp"
+                android:textColor="#FCF4AB"
+                android:text="點此選擇日期"
+                android:maxLength="10"
+                android:inputType="date"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="截止日期:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tgc_SignEndDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890-"
+                android:textColor="#FCF4AB"
+                android:textSize="15dp"
+                android:text="點此選擇日期"
+                android:maxLength="10"
+                android:inputType="date"/>
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="活動地點:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/tgc_Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:text=""
+                android:textColor="#FCF4AB" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="揪團人數上限:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/tgc_NumLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:inputType="number"
+                android:digits="1234567890"
+                android:text=""
+                android:textColor="#FCF4AB" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="成團條件:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/tgc_Condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:text=""
+                android:textColor="#FCF4AB" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="描述:"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/tgc_Content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:ems="15"
+                android:text=""
+                android:textColor="#FCF4AB" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="\n揪團封面:"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tgc_IMG"
+                android:layout_width="212dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/mr_upload_img"></ImageView>
+
+
+        </LinearLayout>
+            <Button
+                android:id="@+id/tgc_btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/orange_primary_dark"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="建立揪團" />
+
+    </TableLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.starChasers">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 網路方式定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+   <!--WebView及直播用-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        >
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAazp0XDGbbueNNG0fx3zI2b4Z8PRyhXV8" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Loginpage"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".member.MemberData"
+            android:label="@string/Memder_Data" />
+        <activity
+            android:name=".tourgroup.TourGrorupDetail"
+            android:label="@string/Tour_Group_Detail" />
+        <activity
+            android:name=".tourgroup.TourGroupCreate"
+            android:label="@string/Tour_Group_Create" />
+        <activity
+            android:name=".tourgroup.TourGroupMyGroup"
+            android:label="@string/Tour_Group_MyGroup" />
+        <activity
+            android:name=".member.MemTgManage"
+            android:label="@string/Mem_Tg_Manage" />
+        <activity
+            android:name=".tourgroup.TourGroupReview"
+            android:label="@string/Tour_Group_Review" />
+        <activity
+            android:name=".Spot.SpotDetail"
+            android:label="@string/Spot_Detail" />
+        <activity
+            android:name=".member.AcQrcode"
+            android:label="@string/QRcode" />
+
+        <activity
+            android:name=".manager.Manager_rantorder"
+            android:label="@string/Manager_rantorder" />
+        <activity
+            android:name=".member.MemberRentorder"
+            android:label="@string/MemberRentorder" />
+        <activity
+            android:name=".manager.Manager_main"
+            android:label="@string/ManagerMain" />
+        <activity
+            android:name=".web_master_chat.WebMasterChatActivity"
+            android:label="WebMasterChatActivity" />
+        <activity
+            android:name=".live.LiveWeb"
+            android:label="LiveWeb" />
+        <activity
+            android:name=".manager.ManagerChatListActivity"
+            android:label="ManagerChatListActivity" />
+
+
+
+    </application>
+
+</manifest>

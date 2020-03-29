@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">>
+
+
+    <item
+        android:id="@+id/tg_RNotYet"
+        android:title="@string/tg_RNotYet"
+        android:orderInCategory="1"
+        />
+    <item
+        android:id="@+id/tg_RSuccess"
+        android:title="@string/tg_RSuccess"
+        android:orderInCategory="2"
+        />
+    <item
+        android:id="@+id/tg_RFail"
+        android:title="@string/tg_RFail"
+        android:orderInCategory="3"
+        />
+
+
+
+</menu>

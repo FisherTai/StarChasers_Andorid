@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pic_bg_tourgroup"
+    tools:context=".tourgroup.TourGroupFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        style="@style/RecyclerViewclass"
+        android:id="@+id/tour_group_recyclerView"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</FrameLayout>

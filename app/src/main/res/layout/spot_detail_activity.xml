@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/t01"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/spDetail_img"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="319dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/spDetail_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/spDetail_spName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXXXX"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/spCategory"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/spCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="XXXXXXXXXX"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="206dp" />
+
+        <Button
+            android:id="@+id/addfavorite"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="onClickFavorite"
+            android:background="@color/red_primary_dark"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:background="@color/black_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/spDetail_img"
+        app:layout_constraintTop_toTopOf="@+id/spDetail_img">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/transparent" />
+
+            <TextView
+                android:id="@+id/spDetail_des"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="XXXXXXXXXX"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spDetail_img" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <fragment
+            android:id="@+id/fmMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="295dp" />
+
+        <TextView
+            android:id="@+id/map_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:text="xxxx" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <Button
+                android:id="@+id/btn_mapbacklocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:onClick="onResetMapClick"
+                android:text="返回位置" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

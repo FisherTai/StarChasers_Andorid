@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#80141246"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp">
+
+
+        <ImageView
+            android:id="@+id/spcd_img"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/t02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8A040636"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tg_img">
+
+
+            <TextView
+                android:id="@+id/spcd_name"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="left|center_vertical"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="地點名稱"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="地點種類："
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/spcd_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/white" />
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/spcd_dif"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="#38A362"
+            android:gravity="center"
+            android:text="難易度"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tg_img"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
