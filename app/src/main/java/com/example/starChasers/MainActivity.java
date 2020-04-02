@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.starChasers.Spot.SpotFragment;
 import com.example.starChasers.Spot.SpotFragmentMyCollention;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.live.LiveWeb;
 import com.example.starChasers.member.MemberFragment;
 import com.example.starChasers.member.SCMemberVO;
@@ -27,22 +27,23 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+    private static final String TAG = "MainActivity";
     SharedPreferences pref;
     private String mem_Email;
     private CommonTask getData;
     private SCMemberVO memberData;
-    private String TAG = "MainActivity";
     private Toolbar myToolBar;
     private BottomNavigationView bnv;
     private String mem_no;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void findView(){
         bnv = findViewById(R.id.bottomNavigationView);
         myToolBar = findViewById(R.id.toolbar2);
+    }
+
+    @Override
+    protected void initActivity() {
         final SharedPreferences pref = getSharedPreferences(Util.PREF_FILE, MODE_PRIVATE);
         final Intent intent = new Intent();
         final Bundle bundle = new Bundle();
@@ -73,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
                         myToolBar.setVisibility(View.VISIBLE);
                         break;
                     case R.id.item_tab3:
-                       Intent intent = new Intent(MainActivity.this, LiveWeb.class);
-                       startActivity(intent);
+                        Intent intent = new Intent(MainActivity.this, LiveWeb.class);
+                        startActivity(intent);
                         break;
                     case R.id.item_tab4:
                         selectedFragment = new SpotFragment();
@@ -177,6 +178,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //建立Toolbar

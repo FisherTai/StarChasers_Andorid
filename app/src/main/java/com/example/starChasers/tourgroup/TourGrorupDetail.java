@@ -9,9 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.example.starChasers.task.ImageTask;
@@ -20,33 +19,50 @@ import com.google.gson.JsonObject;
 
 import java.util.Date;
 
-public class TourGrorupDetail extends AppCompatActivity {
+public class TourGrorupDetail extends BaseActivity {
 //tgd =Tour Grorup Detail
     private static final String TAG = "TourGrorupDetail";
     private CommonTask getTGDData;
     private ImageTask getTGDImg;
     private ImageView tgd_image;
-    private TextView tgd_tgname;
-    private TextView tgd_tgAcDate;
-    private TextView tgd_tgEndDate;
-    private TextView tgd_tgSignEnd;
-    private TextView tgd_tgAddress;
-    private TextView tgd_tgCondition;
-    private TextView tgd_tgContent;
-    private TextView tgd_tgNumLimit;
-    private TextView tgd_tgNum;
+    private TextView tgd_tgname,
+                     tgd_tgAcDate,
+                     tgd_tgEndDate,
+                     tgd_tgSignEnd,
+                     tgd_tgAddress,
+                     tgd_tgCondition,
+                     tgd_tgContent,
+                     tgd_tgNumLimit,
+                     tgd_tgNum;
     private Button tgd_btnSign;
     private Bundle bundle ;
     private int imageSize;
     private String mem_no;
     private Date date = new Date();
-    @Override
-    protected void onCreate(Bundle saveInstanceState) {
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.tour_group_detail_activity);
 
-        //-----------------------------------------設定元件-----------------------------------
-        findView();
+
+    @Override
+    protected int getLayout() {
+        return R.layout.tour_group_detail_activity;
+    }
+
+    @Override
+    protected void findView() {
+        tgd_image = findViewById(R.id.tgd_image);
+        tgd_tgname = findViewById(R.id.tgd_tgname);
+        tgd_tgAcDate = findViewById(R.id.tgd_tgAcDate);
+        tgd_tgEndDate = findViewById(R.id.tgd_tgEndDate);
+        tgd_tgSignEnd = findViewById(R.id.tgd_tgSignEnd);
+        tgd_tgAddress = findViewById(R.id.tgd_tgAddress);
+        tgd_tgCondition = findViewById(R.id.tgd_tgCondition);
+        tgd_tgContent = findViewById(R.id.tgd_tgContent);
+        tgd_tgNumLimit = findViewById(R.id.tgd_tgNumLimit);
+        tgd_tgNum = findViewById(R.id.tgd_tgNum);
+        tgd_btnSign = findViewById(R.id.tgd_btnSign);
+    }
+
+    @Override
+    protected void initActivity() {
         //---------------------------取出bundle資料並放入對應的元件中顯示-------------------
         bundle = getIntent().getExtras();//取得從TourGroupFragment送來的bundle
         SharedPreferences pref = this.getSharedPreferences(Util.PREF_FILE, MODE_PRIVATE);
@@ -82,19 +98,7 @@ public class TourGrorupDetail extends AppCompatActivity {
         getTGDData(); //取得揪團圖片
         signUpTG(); //報名按鈕
     }
-    private void findView() {
-        tgd_image = findViewById(R.id.tgd_image);
-        tgd_tgname = findViewById(R.id.tgd_tgname);
-        tgd_tgAcDate = findViewById(R.id.tgd_tgAcDate);
-        tgd_tgEndDate = findViewById(R.id.tgd_tgEndDate);
-        tgd_tgSignEnd = findViewById(R.id.tgd_tgSignEnd);
-        tgd_tgAddress = findViewById(R.id.tgd_tgAddress);
-        tgd_tgCondition = findViewById(R.id.tgd_tgCondition);
-        tgd_tgContent = findViewById(R.id.tgd_tgContent);
-        tgd_tgNumLimit = findViewById(R.id.tgd_tgNumLimit);
-        tgd_tgNum = findViewById(R.id.tgd_tgNum);
-        tgd_btnSign = findViewById(R.id.tgd_btnSign);
-    }
+
     protected void getTGDData(){
         if (Util.networkConnected(this)) {
             String url = Util.LocalHostURL + "TourGroupServlet";

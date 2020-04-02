@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
@@ -22,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.member.SCMemberVO;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
@@ -34,7 +34,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 
-public class TourGroupReview extends AppCompatActivity {
+public class TourGroupReview extends BaseActivity {
 
     private Toolbar tGReviewToolbar;
     private String TAG ="ToruGroupReview";
@@ -43,18 +43,15 @@ public class TourGroupReview extends AppCompatActivity {
     private int search = 3 ; //預設為全部出現
     private static String posMemNo;
     private static String posTgNo;
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tour_group_review);
-        tour_group_review_recyclerView = findViewById(R.id.tour_group_review_recyclerView);
-        findView();
-        tour_group_review_recyclerView.setHasFixedSize(true);
-        tour_group_review_recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        updateUI();
+
+
+    @Override
+    protected int getLayout() {
+        return R.layout.tour_group_review;
     }
 
     protected void findView(){
-
+        tour_group_review_recyclerView = findViewById(R.id.tour_group_review_recyclerView);
         tGReviewToolbar =findViewById(R.id.review_toolbar);
         setSupportActionBar(tGReviewToolbar);
         tGReviewToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -62,7 +59,6 @@ public class TourGroupReview extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId())
                 {
-
                     case R.id.tg_RNotYet:
                         search = 0;
                         updateUI();
@@ -80,6 +76,14 @@ public class TourGroupReview extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void initActivity() {
+        tour_group_review_recyclerView.setHasFixedSize(true);
+        tour_group_review_recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        updateUI();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //建立Toolbar

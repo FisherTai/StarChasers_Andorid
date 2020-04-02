@@ -6,26 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.tourgroup.TourGroupMyGroup;
 
-public class MemTgManage extends AppCompatActivity {
+public class MemTgManage extends BaseActivity {
 
-    private Button memt_tgPart;
-    private Button memt_tgMaster;
+    private Button memt_tgPart,memt_tgMaster;
     private String mem_no;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mem_tg_manage);
-        findView();
+    protected int getLayout() {
+        return R.layout.activity_mem_tg_manage;
     }
 
-    private void findView(){
+    protected void findView(){
         memt_tgPart =findViewById(R.id.memt_tgPart);
         memt_tgMaster=findViewById(R.id.memt_tgMaster);
         SharedPreferences pref  = getSharedPreferences(Util.PREF_FILE,MODE_PRIVATE);
@@ -57,6 +53,11 @@ public class MemTgManage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void initActivity() {
+
     }
 
 }

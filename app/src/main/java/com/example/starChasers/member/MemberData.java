@@ -8,43 +8,40 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.google.gson.JsonObject;
 
-public class MemberData extends AppCompatActivity {
+public class MemberData extends BaseActivity {
 
     private static final String TAG = "MemberData";
     private CommonTask getMemberDataByEmail;
     private String mem_Email;
     private SCMemberVO memberData;
-    private TextView memd_No;
-    private TextView memd_Email;
-    private TextView memd_Name;
-    private TextView memd_Phone;
-    private TextView memd_Sex;
-    private TextView mem_Point;
-    private TextView mem_Birthday;
+    private TextView memd_No,
+                    memd_Email,
+                    memd_Name,
+                    memd_Phone,
+                    memd_Sex,
+                    mem_Point,
+                    mem_Birthday;
     private Button memd_btnEdit;
     private LinearLayout editMemDataLayout;
-    private EditText memd_edName;
-    private EditText memd_edPhone;
-    private EditText memd_edPSW;
+    private EditText memd_edName,
+                     memd_edPhone,
+                     memd_edPSW;
     private Button memd_Submit;
     private Bundle bundle ;
 
     @Override
-    protected void onCreate(Bundle saveInstanceState) {
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.activity_member_data);
-        findView();
-        getdata();
-        editMemData();
+    protected int getLayout() {
+        return R.layout.activity_member_data;
     }
-    private void findView(){
+
+    @Override
+    protected void findView(){
         mem_Birthday = findViewById(R.id.memd_Birthday);
         memd_No = findViewById(R.id.memd_No);
         memd_Email = findViewById(R.id.memd_Email);
@@ -55,6 +52,12 @@ public class MemberData extends AppCompatActivity {
         memd_btnEdit = findViewById(R.id.memd_btnEdit);
         memd_Submit = findViewById(R.id.memd_Submit);
         bundle = getIntent().getExtras();
+    }
+
+    @Override
+    protected void initActivity() {
+        getdata();
+        editMemData();
     }
 
     private void getdata(){

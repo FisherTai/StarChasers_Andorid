@@ -29,9 +29,9 @@ import java.util.Locale;
 
 public class Util {
     private final static String TAG = "Util";
-//    public final static String LocalHost ="d804c5e1.ngrok.io";
+    public final static String LocalHost ="3fedc5cc.ngrok.io";
 //    public final static String LocalHost ="10.0.2.2:8081";
-    public final static String LocalHost ="da104g5.nctu.me";
+//    public final static String LocalHost ="da104g5.nctu.me";
 //    public final static String LocalHost ="104.199.135.173";
 
 //    public final static String LocalHostURL = "http://10.0.2.2:8081/DA104G5M/Mobile";

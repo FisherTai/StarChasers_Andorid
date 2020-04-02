@@ -11,16 +11,16 @@ public class WelcomeActivity extends BaseActivity  {
     private static final int REQ_LOGIN = 1;
 
     @Override
-    public void getLayout() {
-        setContentView(R.layout.activity_welcome);
+    protected int getLayout() {
+        return R.layout.activity_welcome;
     }
 
     @Override
-    public void findView() {
+    protected void findView() {
     }
 
     @Override
-    public void initActivity() {
+    protected void initActivity() {
 
         new Handler().postDelayed(new Runnable() {
             @Override

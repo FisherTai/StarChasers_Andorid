@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.net.Uri;
-import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,10 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.example.starChasers.task.ImageTask;
@@ -53,7 +52,7 @@ import com.google.gson.JsonObject;
 
 import java.util.Locale;
 
-public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback {
+public class SpotDetail extends BaseActivity implements OnMapReadyCallback {
     private static final String TAG = "SpotDetail";
     //    private static final int MY_REQUEST_CODE = 0;
     private static final int REQUEST_CHECK_SETTINGS = 1;
@@ -62,14 +61,14 @@ public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback 
     private SpotVO spotVO;
     private Spot_CategoryVO spcVO;
     private boolean isFavorite;
-    private TextView spDetail_des;
-    private TextView spDetail_spName;
-    private TextView spCategory;
-    private TextView map_prompt;
+    private TextView spDetail_des
+                    ,spDetail_spName
+                    ,spCategory
+                    ,map_prompt;
     private ImageView spDetail_img;
     private ImageTask sp_imageTask;
-    private Button addfavorite;
-    private Button btn_mapbacklocal;
+    private Button addfavorite,
+                   btn_mapbacklocal;
     private String mem_no;
     // 標記
     private Marker spotMarker;
@@ -84,13 +83,6 @@ public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     //Activity生命週期----------------------------------------------
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.spot_detail_activity);
-        findView();
-        getmap();
-    }
-    @Override
     public void onResume() {
         super.onResume();
         startLocationUpdates();
@@ -100,7 +92,6 @@ public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback 
         super.onPause();
         stopLocationUpdates();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -126,6 +117,12 @@ public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback 
         }
     }
 
+    @Override
+    protected int getLayout() {
+        return R.layout.spot_detail_activity;
+    }
+
+    @Override
     protected void findView() {
         final SharedPreferences pref = getSharedPreferences(Util.PREF_FILE, MODE_PRIVATE);
         mem_no = pref.getString("mem_No", "");
@@ -201,6 +198,11 @@ public class SpotDetail extends AppCompatActivity implements OnMapReadyCallback 
                 }
             }
         });
+    }
+
+    @Override
+    protected void initActivity() {
+        getmap();
     }
 
     private boolean setFavorite(String sp_no, String mem_no) {

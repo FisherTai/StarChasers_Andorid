@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.example.starChasers.task.ImageTask;
@@ -25,19 +25,25 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class TourGroupMyGroup extends AppCompatActivity {
+public class TourGroupMyGroup extends BaseActivity {
 
     private ImageTask tg_imageTask;
 //    private CommonTask get_tgtext;
     private RecyclerView mytour_group_recyclerView;
-    private String TAG ="TourGroupMyGroup";
-
+    private static final String TAG = "TourGroupMyGroup";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tour_group_mygroup_activity);
+    protected int getLayout() {
+        return R.layout.tour_group_mygroup_activity;
+    }
+
+    @Override
+    protected void findView() {
         mytour_group_recyclerView = findViewById(R.id.tour_group_myrecyclerView);
+    }
+
+    @Override
+    protected void initActivity() {
         mytour_group_recyclerView.setHasFixedSize(true);
         mytour_group_recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         updateUI();

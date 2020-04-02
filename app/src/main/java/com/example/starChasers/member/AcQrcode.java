@@ -3,17 +3,14 @@ package com.example.starChasers.member;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.zxing.Contents;
 import com.example.starChasers.zxing.QRCodeEncoder;
 import com.google.gson.JsonObject;
@@ -23,31 +20,33 @@ import com.google.zxing.WriterException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class AcQrcode extends AppCompatActivity  {
+public class AcQrcode extends BaseActivity {
+    private static final String TAG = "AcQrcode";
     private Timer timer;
-    private int tt=300;//設置初始秒數
-    private int mm=4;
-    private int s1=60;
+    private int tt=300,
+               mm=4,
+               s1=60;//設置初始秒數
     private String s3="";
     private ImageView ac_qrcode;
-    private  final String TAG = "ArQrcode";
-    private String qrCodeText;
-    private TextView qr_rdno;
-    private TextView timeout;
-
-    private String jsonout;
+    private String qrCodeText,
+                   jsonout;
+    private TextView qr_rdno,
+                     timeout;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qrcode);
-        findview();
+    protected int getLayout() {
+        return R.layout.activity_qrcode;
+    }
+
+    @Override
+    protected void initActivity() {
         showqrcode();
         timecounter();
         qr_rdno.setText(qrCodeText);
-
     }
-    private void findview(){
+
+    @Override
+    protected void findView(){
         ac_qrcode =findViewById(R.id.ac_qrcode);
         Intent intent = this.getIntent();
         qrCodeText = intent.getStringExtra("rd_no");

@@ -11,14 +11,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(getLayout());
         getLayout();
         findView();
         initActivity();
     }
 
-    public abstract void getLayout();
-    public abstract void findView();
-    public abstract void initActivity();
+    protected abstract int getLayout(); //用來取得Content
+    protected abstract void findView();
+    protected abstract void initActivity();
 
     @Override
     public void onClick(View v) {

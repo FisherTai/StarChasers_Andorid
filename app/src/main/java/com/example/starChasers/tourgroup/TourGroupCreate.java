@@ -20,9 +20,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.starChasers.R;
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.example.starChasers.task.ImageTask;
@@ -35,19 +34,19 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class TourGroupCreate extends AppCompatActivity {
+public class TourGroupCreate extends BaseActivity {
     private static final int PICK_FROM_CAMERA = 1;
     private static final int PICK_FROM_GALLERY = 2;
     private static final int PICK_FROM_GET = 3;
-    private final String TAG = "TourGroupCreate";
-    private EditText tgc_Name;
-    private TextView tgc_AcDate;
-    private TextView tgc_AcEndDate;
-    private TextView tgc_SignEndDay;
-    private EditText tgc_Address;
-    private EditText tgc_NumLimit;
-    private EditText tgc_Condition;
-    private EditText tgc_Content;
+    private static final String TAG = "TourGroupCreate";
+    private TextView tgc_AcDate,
+                     tgc_AcEndDate,
+                     tgc_SignEndDay;
+    private EditText tgc_Address,
+                     tgc_NumLimit,
+                     tgc_Condition,
+                     tgc_Content,
+                     tgc_Name;
     private ImageView tgc_IMG;
     private Button tgc_btnSubmit;
     private ImageTask imageTask;
@@ -57,12 +56,11 @@ public class TourGroupCreate extends AppCompatActivity {
     private Bitmap picture;
     private Uri outputFileUri;
     private int mYear, mMonth, mDay;
+    
 
-    protected void onCreate(Bundle saveInstanceState) {
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.tour_group_create_activity);
-        findView();
-        creatTourGroup();
+    @Override
+    protected int getLayout() {
+        return R.layout.tour_group_create_activity;
     }
 
     protected void findView() {
@@ -110,6 +108,11 @@ public class TourGroupCreate extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void initActivity() {
+        creatTourGroup();
     }
 
     protected void creatTourGroup() {

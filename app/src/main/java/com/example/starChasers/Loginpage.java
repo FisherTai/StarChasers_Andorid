@@ -2,39 +2,31 @@ package com.example.starChasers;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.starChasers.base.BaseActivity;
 import com.example.starChasers.manager.Manager_main;
 import com.example.starChasers.myutil.Util;
 import com.example.starChasers.task.CommonTask;
 import com.google.gson.JsonObject;
 
 
-public class Loginpage extends AppCompatActivity {
+public class Loginpage extends BaseActivity {
     private CommonTask isMemberTask;
-    private TextView btnlogin;
-    private TextView btnsign;
-    private TextView tvFYP;
-    private TextView etUserEmail;
-    private TextView etPassword;
+    private TextView btnlogin,btnsign,tvFYP,etUserEmail,etPassword;
     private CheckBox cbRemember;
-    private static final String TAG = "LoginActivity";
+    private static final String TAG = "Loginpage";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        findView();
-        setResult(RESULT_CANCELED);
+    public int getLayout() {
+        return R.layout.activity_login;
     }
 
-    private void findView() {
+    @Override
+    protected void findView() {
         btnlogin = findViewById(R.id.btnlogin);
         etUserEmail = findViewById(R.id.etUserEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -116,6 +108,11 @@ public class Loginpage extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void initActivity() {
+        setResult(RESULT_CANCELED);
     }
 
 
